@@ -35,10 +35,10 @@
             })
             .then(function(data){
               
-              document.getElementById("back-link").href = "list-recipes.html?category=" + $data[0].category;
+              document.getElementById("back-link").href = "list-recipes.html?category=" + data[0].category;
               var output = "";
 
-          output +
+          output +=`
             <img src="${rootPath}uploads/${data[0].image}" />
             <h1>${data[0].title}</h1>
             <div class="recipe-details-ingredients">
@@ -53,7 +53,7 @@
                         ${data[0].method}
                     </ol>
                  </div>
-              ;
+              `;
             document.getElementById("output").innerHTML = output;
             })
       }
